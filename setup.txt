@@ -1,0 +1,49 @@
+# First install minikube: https://minikube.sigs.k8s.io/docs/start/
+
+# then start it
+❯ minikube start
+😄  minikube v1.25.2 on Darwin 11.6
+✨  Automatically selected the docker driver. Other choices: hyperkit, ssh
+👍  Starting control plane node minikube in cluster minikube
+🚜  Pulling base image ...
+🔥  Creating docker container (CPUs=2, Memory=15965MB) ...
+🐳  Preparing Kubernetes v1.23.3 on Docker 20.10.12 ...
+    ▪ kubelet.housekeeping-interval=5m
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+
+❗  /usr/local/bin/kubectl is version 1.19.7, which may have incompatibilites with Kubernetes 1.23.3.
+    ▪ Want kubectl v1.23.3? Try 'minikube kubectl -- get pods -A'
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+
+# enable the registry
+❯ minikube addons enable registry
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                      │
+│    Registry addon with docker driver uses port 58651 please use that instead of default port 5000    │
+│                                                                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────╯
+📘  For more information see: https://minikube.sigs.k8s.io/docs/drivers/docker
+    ▪ Using image registry:2.7.1
+    ▪ Using image gcr.io/google_containers/kube-registry-proxy:0.4
+🔎  Verifying registry addon...
+🌟  The 'registry' addon is enabled
+
+# some kinda networking magic
+# explained here: https://minikube.sigs.k8s.io/docs/handbook/registry/
+❯ docker run --rm -it --network=host alpine ash -c "apk add socat && socat TCP-LISTEN:5000,reuseaddr,fork TCP:$(minikube ip):5000"
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+(1/4) Installing ncurses-terminfo-base (6.3_p20211120-r0)
+(2/4) Installing ncurses-libs (6.3_p20211120-r0)
+(3/4) Installing readline (8.1.1-r0)
+(4/4) Installing socat (1.7.4.2-r0)
+Executing busybox-1.34.1-r3.trigger
+OK: 7 MiB in 18 packages
+
+# just leave that running in one terminal

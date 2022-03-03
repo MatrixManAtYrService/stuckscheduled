@@ -1,0 +1,234 @@
+
+/home/airflow/.local/lib/python3.9/site-packages/airflow/www/utils.py:560 DeprecationWarning: 'jinja2.Markup' is deprecated and will be removed in Jinja 3.1. Import 'markupsafe.Markup' instead.
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+[2022-03-03 06:33:49,416] {scheduler_job.py:619} INFO - Starting the scheduler
+[2022-03-03 06:33:49,416] {scheduler_job.py:624} INFO - Processing each file at most -1 times
+[2022-03-03 06:33:51,109] {manager.py:163} INFO - Launched DagFileProcessorManager with pid: 46
+[2022-03-03 06:33:51,113] {scheduler_job.py:1137} INFO - Resetting orphaned tasks for active dag runs
+[2022-03-03 06:33:51,123] {settings.py:55} INFO - Configured default timezone Timezone('UTC')
+[2022-03-03 06:33:51,199] {settings.py:474} INFO - Loaded airflow_local_settings from /opt/airflow/config/airflow_local_settings.py .
+[2022-03-03 06:34:41,844] {dag.py:2937} INFO - Setting next_dagrun for example_sql_sensor to 2022-03-03T06:34:39.499385+00:00
+[2022-03-03 06:34:42,048] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:31:39.499385+00:00 [scheduled]>
+[2022-03-03 06:34:42,051] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+[2022-03-03 06:34:42,051] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:34:42,052] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:31:39.499385+00:00 [scheduled]>
+[2022-03-03 06:34:42,055] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='prepare_table', run_id='scheduled__2022-03-03T06:31:39.499385+00:00', try_number=1) to executor with priority 5 and queue default
+[2022-03-03 06:34:42,055] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'prepare_table', 'scheduled__2022-03-03T06:31:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:34:42,541] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.prepare_table run_id=scheduled__2022-03-03T06:31:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:34:42,549] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:31:39.499385+00:00 [queued]> to ca58ca03-b9f8-421d-9237-96ba383cb798
+[2022-03-03 06:34:44,745] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.prepare_table run_id=scheduled__2022-03-03T06:31:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:34:44,755] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=prepare_table, run_id=scheduled__2022-03-03T06:31:39.499385+00:00, run_start_date=2022-03-03 06:34:43.262030+00:00, run_end_date=2022-03-03 06:34:43.742580+00:00, run_duration=0.48055, state=failed, executor_state=success, try_number=1, max_tries=0, job_id=3, pool=default_pool, queue=default, priority_weight=5, operator=PythonOperator
+[2022-03-03 06:34:45,815] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:31:39.499385+00:00 [scheduled]>
+[2022-03-03 06:34:45,819] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+[2022-03-03 06:34:45,819] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:34:45,820] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:31:39.499385+00:00 [scheduled]>
+[2022-03-03 06:34:45,823] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='drop_table_last', run_id='scheduled__2022-03-03T06:31:39.499385+00:00', try_number=1) to executor with priority 1 and queue default
+[2022-03-03 06:34:45,824] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'drop_table_last', 'scheduled__2022-03-03T06:31:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:34:45,880] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.drop_table_last run_id=scheduled__2022-03-03T06:31:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:34:45,890] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:31:39.499385+00:00 [queued]> to cd15a99a-9708-4497-ac4a-84c97ecfa9b9
+[2022-03-03 06:34:47,158] {dagrun.py:530} ERROR - Marking run <DagRun example_sql_sensor @ 2022-03-03 06:31:39.499385+00:00: scheduled__2022-03-03T06:31:39.499385+00:00, externally triggered: False> failed
+[2022-03-03 06:34:47,159] {dagrun.py:590} INFO - DagRun Finished: dag_id=example_sql_sensor, execution_date=2022-03-03 06:31:39.499385+00:00, run_id=scheduled__2022-03-03T06:31:39.499385+00:00, run_start_date=2022-03-03 06:34:41.933622+00:00, run_end_date=2022-03-03 06:34:47.159283+00:00, run_duration=5.225661, state=failed, external_trigger=False, run_type=scheduled, data_interval_start=2022-03-03 06:31:39.499385+00:00, data_interval_end=2022-03-03 06:34:39.499385+00:00, dag_hash=18529d920fc376b1ffe8730f0709f65d
+[2022-03-03 06:34:47,165] {dag.py:2937} INFO - Setting next_dagrun for example_sql_sensor to 2022-03-03T06:34:39.499385+00:00
+[2022-03-03 06:34:47,205] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.drop_table_last run_id=scheduled__2022-03-03T06:31:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:34:47,226] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=drop_table_last, run_id=scheduled__2022-03-03T06:31:39.499385+00:00, run_start_date=2022-03-03 06:34:46.168808+00:00, run_end_date=2022-03-03 06:34:46.421343+00:00, run_duration=0.252535, state=failed, executor_state=success, try_number=1, max_tries=0, job_id=4, pool=default_pool, queue=default, priority_weight=1, operator=PostgresOperator
+[2022-03-03 06:37:39,771] {dag.py:2937} INFO - Setting next_dagrun for example_sql_sensor to 2022-03-03T06:37:39.499385+00:00
+[2022-03-03 06:37:39,824] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+[2022-03-03 06:37:39,826] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+[2022-03-03 06:37:39,828] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:37:39,828] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+[2022-03-03 06:37:39,833] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='prepare_table', run_id='scheduled__2022-03-03T06:34:39.499385+00:00', try_number=1) to executor with priority 5 and queue default
+[2022-03-03 06:37:39,833] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'prepare_table', 'scheduled__2022-03-03T06:34:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:37:39,882] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.prepare_table run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:37:39,892] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:34:39.499385+00:00 [queued]> to 84605116-2ee9-4d91-a5d9-8c60d3ce9981
+[2022-03-03 06:37:40,299] {scheduler_job.py:300} INFO - 2 tasks up for execution:
+	<TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+	<TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+[2022-03-03 06:37:40,301] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 2 task instances ready to be queued
+[2022-03-03 06:37:40,301] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:37:40,301] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 1/16 running and queued tasks
+[2022-03-03 06:37:40,301] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+	<TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+[2022-03-03 06:37:40,305] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='sleep_30', run_id='scheduled__2022-03-03T06:34:39.499385+00:00', try_number=1) to executor with priority 3 and queue default
+[2022-03-03 06:37:40,305] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'sleep_30', 'scheduled__2022-03-03T06:34:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:37:40,306] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='sql_sensor', run_id='scheduled__2022-03-03T06:34:39.499385+00:00', try_number=1) to executor with priority 2 and queue default
+[2022-03-03 06:37:40,306] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'sql_sensor', 'scheduled__2022-03-03T06:34:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:37:40,519] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sleep_30 run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:37:40,519] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sql_sensor run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:37:40,519] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.prepare_table run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:37:40,532] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:34:39.499385+00:00 [queued]> to eb9fc9dd-bd94-43c8-867c-68a0d13a7ed5
+[2022-03-03 06:37:40,532] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:34:39.499385+00:00 [queued]> to f7de9707-a3e9-4776-8980-1fd105b4c5dd
+[2022-03-03 06:37:40,532] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=prepare_table, run_id=scheduled__2022-03-03T06:34:39.499385+00:00, run_start_date=2022-03-03 06:37:40.005597+00:00, run_end_date=2022-03-03 06:37:40.182665+00:00, run_duration=0.177068, state=success, executor_state=success, try_number=1, max_tries=0, job_id=5, pool=default_pool, queue=default, priority_weight=5, operator=PythonOperator
+[2022-03-03 06:38:12,112] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+[2022-03-03 06:38:12,116] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 127 open slots and 1 task instances ready to be queued
+[2022-03-03 06:38:12,116] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 1/16 running and queued tasks
+[2022-03-03 06:38:12,117] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+[2022-03-03 06:38:12,121] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='add_state', run_id='scheduled__2022-03-03T06:34:39.499385+00:00', try_number=1) to executor with priority 2 and queue default
+[2022-03-03 06:38:12,121] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'add_state', 'scheduled__2022-03-03T06:34:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:38:12,175] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.add_state run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:38:12,175] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sleep_30 run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:38:12,188] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:34:39.499385+00:00 [queued]> to 72a64f4a-d377-41e6-8734-4cd54236410c
+[2022-03-03 06:38:12,188] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=sleep_30, run_id=scheduled__2022-03-03T06:34:39.499385+00:00, run_start_date=2022-03-03 06:37:40.660738+00:00, run_end_date=2022-03-03 06:38:11.055304+00:00, run_duration=30.394566, state=success, executor_state=success, try_number=1, max_tries=0, job_id=6, pool=default_pool, queue=default, priority_weight=3, operator=BashOperator
+[2022-03-03 06:38:13,468] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.add_state run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:38:13,478] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=add_state, run_id=scheduled__2022-03-03T06:34:39.499385+00:00, run_start_date=2022-03-03 06:38:12.423154+00:00, run_end_date=2022-03-03 06:38:12.661918+00:00, run_duration=0.238764, state=success, executor_state=success, try_number=1, max_tries=0, job_id=8, pool=default_pool, queue=default, priority_weight=2, operator=PostgresOperator
+[2022-03-03 06:38:41,403] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+[2022-03-03 06:38:41,406] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+[2022-03-03 06:38:41,406] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:38:41,407] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:34:39.499385+00:00 [scheduled]>
+[2022-03-03 06:38:41,409] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='drop_table_last', run_id='scheduled__2022-03-03T06:34:39.499385+00:00', try_number=1) to executor with priority 1 and queue default
+[2022-03-03 06:38:41,410] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'drop_table_last', 'scheduled__2022-03-03T06:34:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:38:41,488] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.drop_table_last run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:38:41,488] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sql_sensor run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:38:41,496] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:34:39.499385+00:00 [queued]> to 52786a1a-9cca-4fc9-af1a-8f9c94e7b6c3
+[2022-03-03 06:38:41,496] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=sql_sensor, run_id=scheduled__2022-03-03T06:34:39.499385+00:00, run_start_date=2022-03-03 06:37:40.735377+00:00, run_end_date=2022-03-03 06:38:41.266500+00:00, run_duration=60.531123, state=success, executor_state=success, try_number=1, max_tries=0, job_id=7, pool=default_pool, queue=default, priority_weight=2, operator=SqlSensor
+[2022-03-03 06:38:42,640] {dagrun.py:545} INFO - Marking run <DagRun example_sql_sensor @ 2022-03-03 06:34:39.499385+00:00: scheduled__2022-03-03T06:34:39.499385+00:00, externally triggered: False> successful
+[2022-03-03 06:38:42,640] {dagrun.py:590} INFO - DagRun Finished: dag_id=example_sql_sensor, execution_date=2022-03-03 06:34:39.499385+00:00, run_id=scheduled__2022-03-03T06:34:39.499385+00:00, run_start_date=2022-03-03 06:37:39.786874+00:00, run_end_date=2022-03-03 06:38:42.640770+00:00, run_duration=62.853896, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2022-03-03 06:34:39.499385+00:00, data_interval_end=2022-03-03 06:37:39.499385+00:00, dag_hash=18529d920fc376b1ffe8730f0709f65d
+[2022-03-03 06:38:42,646] {dag.py:2937} INFO - Setting next_dagrun for example_sql_sensor to 2022-03-03T06:37:39.499385+00:00
+[2022-03-03 06:38:42,680] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.drop_table_last run_id=scheduled__2022-03-03T06:34:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:38:42,689] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=drop_table_last, run_id=scheduled__2022-03-03T06:34:39.499385+00:00, run_start_date=2022-03-03 06:38:41.636791+00:00, run_end_date=2022-03-03 06:38:41.860689+00:00, run_duration=0.223898, state=success, executor_state=success, try_number=1, max_tries=0, job_id=9, pool=default_pool, queue=default, priority_weight=1, operator=PostgresOperator
+[2022-03-03 06:38:50,999] {scheduler_job.py:1137} INFO - Resetting orphaned tasks for active dag runs
+[2022-03-03 06:40:40,459] {dag.py:2937} INFO - Setting next_dagrun for example_sql_sensor to 2022-03-03T06:40:39.499385+00:00
+[2022-03-03 06:40:40,516] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+[2022-03-03 06:40:40,523] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+[2022-03-03 06:40:40,523] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:40:40,526] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+[2022-03-03 06:40:40,530] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='prepare_table', run_id='scheduled__2022-03-03T06:37:39.499385+00:00', try_number=1) to executor with priority 5 and queue default
+[2022-03-03 06:40:40,530] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'prepare_table', 'scheduled__2022-03-03T06:37:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:40:40,638] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.prepare_table run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:40:40,647] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:37:39.499385+00:00 [queued]> to bfd9a4bb-2878-41be-aac4-81529def79d0
+[2022-03-03 06:40:41,898] {scheduler_job.py:300} INFO - 2 tasks up for execution:
+	<TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+	<TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+[2022-03-03 06:40:41,901] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 2 task instances ready to be queued
+[2022-03-03 06:40:41,901] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:40:41,901] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 1/16 running and queued tasks
+[2022-03-03 06:40:41,902] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+	<TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+[2022-03-03 06:40:41,904] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='sleep_30', run_id='scheduled__2022-03-03T06:37:39.499385+00:00', try_number=1) to executor with priority 3 and queue default
+[2022-03-03 06:40:41,904] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'sleep_30', 'scheduled__2022-03-03T06:37:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:40:41,904] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='sql_sensor', run_id='scheduled__2022-03-03T06:37:39.499385+00:00', try_number=1) to executor with priority 2 and queue default
+[2022-03-03 06:40:41,904] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'sql_sensor', 'scheduled__2022-03-03T06:37:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:40:42,141] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sleep_30 run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:40:42,141] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sql_sensor run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:40:42,141] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.prepare_table run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:40:42,151] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=prepare_table, run_id=scheduled__2022-03-03T06:37:39.499385+00:00, run_start_date=2022-03-03 06:40:40.877686+00:00, run_end_date=2022-03-03 06:40:41.117962+00:00, run_duration=0.240276, state=success, executor_state=success, try_number=1, max_tries=0, job_id=10, pool=default_pool, queue=default, priority_weight=5, operator=PythonOperator
+[2022-03-03 06:40:42,152] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:37:39.499385+00:00 [queued]> to 387f35ee-8f8e-4312-9aed-a2c9f3171e86
+[2022-03-03 06:40:42,152] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:37:39.499385+00:00 [queued]> to 30b05156-30bb-464f-876e-9ffa94ce6554
+[2022-03-03 06:41:13,461] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+[2022-03-03 06:41:13,463] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 127 open slots and 1 task instances ready to be queued
+[2022-03-03 06:41:13,463] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 1/16 running and queued tasks
+[2022-03-03 06:41:13,464] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+[2022-03-03 06:41:13,467] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='add_state', run_id='scheduled__2022-03-03T06:37:39.499385+00:00', try_number=1) to executor with priority 2 and queue default
+[2022-03-03 06:41:13,467] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'add_state', 'scheduled__2022-03-03T06:37:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:41:13,526] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.add_state run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:41:13,526] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sleep_30 run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:41:13,536] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:37:39.499385+00:00 [queued]> to 1a3efdff-1461-450e-96ed-0e0cc9dffbcc
+[2022-03-03 06:41:13,536] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=sleep_30, run_id=scheduled__2022-03-03T06:37:39.499385+00:00, run_start_date=2022-03-03 06:40:42.327892+00:00, run_end_date=2022-03-03 06:41:12.744144+00:00, run_duration=30.416252, state=success, executor_state=success, try_number=1, max_tries=0, job_id=11, pool=default_pool, queue=default, priority_weight=3, operator=BashOperator
+[2022-03-03 06:41:14,732] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.add_state run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:41:14,745] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=add_state, run_id=scheduled__2022-03-03T06:37:39.499385+00:00, run_start_date=2022-03-03 06:41:13.675829+00:00, run_end_date=2022-03-03 06:41:13.858592+00:00, run_duration=0.182763, state=success, executor_state=success, try_number=1, max_tries=0, job_id=13, pool=default_pool, queue=default, priority_weight=2, operator=PostgresOperator
+[2022-03-03 06:41:43,369] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+[2022-03-03 06:41:43,371] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+[2022-03-03 06:41:43,372] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:41:43,372] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:37:39.499385+00:00 [scheduled]>
+[2022-03-03 06:41:43,376] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='drop_table_last', run_id='scheduled__2022-03-03T06:37:39.499385+00:00', try_number=1) to executor with priority 1 and queue default
+[2022-03-03 06:41:43,376] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'drop_table_last', 'scheduled__2022-03-03T06:37:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:41:43,428] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.drop_table_last run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:41:43,428] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sql_sensor run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:41:43,442] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=sql_sensor, run_id=scheduled__2022-03-03T06:37:39.499385+00:00, run_start_date=2022-03-03 06:40:42.420752+00:00, run_end_date=2022-03-03 06:41:42.988449+00:00, run_duration=60.567697, state=success, executor_state=success, try_number=1, max_tries=0, job_id=12, pool=default_pool, queue=default, priority_weight=2, operator=SqlSensor
+[2022-03-03 06:41:43,442] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:37:39.499385+00:00 [queued]> to 10f24d66-7a44-4757-8fcb-91faf4d205be
+[2022-03-03 06:41:44,109] {dagrun.py:545} INFO - Marking run <DagRun example_sql_sensor @ 2022-03-03 06:37:39.499385+00:00: scheduled__2022-03-03T06:37:39.499385+00:00, externally triggered: False> successful
+[2022-03-03 06:41:44,110] {dagrun.py:590} INFO - DagRun Finished: dag_id=example_sql_sensor, execution_date=2022-03-03 06:37:39.499385+00:00, run_id=scheduled__2022-03-03T06:37:39.499385+00:00, run_start_date=2022-03-03 06:40:40.474561+00:00, run_end_date=2022-03-03 06:41:44.110198+00:00, run_duration=63.635637, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2022-03-03 06:37:39.499385+00:00, data_interval_end=2022-03-03 06:40:39.499385+00:00, dag_hash=18529d920fc376b1ffe8730f0709f65d
+[2022-03-03 06:41:44,114] {dag.py:2937} INFO - Setting next_dagrun for example_sql_sensor to 2022-03-03T06:40:39.499385+00:00
+[2022-03-03 06:41:44,145] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.drop_table_last run_id=scheduled__2022-03-03T06:37:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:41:44,152] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=drop_table_last, run_id=scheduled__2022-03-03T06:37:39.499385+00:00, run_start_date=2022-03-03 06:41:43.591984+00:00, run_end_date=2022-03-03 06:41:43.809672+00:00, run_duration=0.217688, state=success, executor_state=success, try_number=1, max_tries=0, job_id=14, pool=default_pool, queue=default, priority_weight=1, operator=PostgresOperator
+[2022-03-03 06:43:39,859] {dag.py:2937} INFO - Setting next_dagrun for example_sql_sensor to 2022-03-03T06:43:39.499385+00:00
+[2022-03-03 06:43:39,916] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+[2022-03-03 06:43:39,920] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+[2022-03-03 06:43:39,920] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:43:39,921] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+[2022-03-03 06:43:39,923] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='prepare_table', run_id='scheduled__2022-03-03T06:40:39.499385+00:00', try_number=1) to executor with priority 5 and queue default
+[2022-03-03 06:43:39,923] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'prepare_table', 'scheduled__2022-03-03T06:40:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:43:39,973] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.prepare_table run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:43:40,019] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.prepare_table scheduled__2022-03-03T06:40:39.499385+00:00 [queued]> to c35421bb-006b-4a2d-a454-90d59452e165
+[2022-03-03 06:43:41,270] {scheduler_job.py:300} INFO - 2 tasks up for execution:
+	<TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+	<TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+[2022-03-03 06:43:41,274] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 2 task instances ready to be queued
+[2022-03-03 06:43:41,274] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:43:41,274] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 1/16 running and queued tasks
+[2022-03-03 06:43:41,275] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+	<TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+[2022-03-03 06:43:41,279] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='sleep_30', run_id='scheduled__2022-03-03T06:40:39.499385+00:00', try_number=1) to executor with priority 3 and queue default
+[2022-03-03 06:43:41,279] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'sleep_30', 'scheduled__2022-03-03T06:40:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:43:41,279] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='sql_sensor', run_id='scheduled__2022-03-03T06:40:39.499385+00:00', try_number=1) to executor with priority 2 and queue default
+[2022-03-03 06:43:41,279] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'sql_sensor', 'scheduled__2022-03-03T06:40:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:43:41,462] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sleep_30 run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:43:41,462] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sql_sensor run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:43:41,462] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.prepare_table run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:43:41,517] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.sleep_30 scheduled__2022-03-03T06:40:39.499385+00:00 [queued]> to 4b1ebb9b-6486-4270-a936-88fd173a2de9
+[2022-03-03 06:43:41,517] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.sql_sensor scheduled__2022-03-03T06:40:39.499385+00:00 [queued]> to aa3032da-cfca-4814-8e0c-e421c048e9c2
+[2022-03-03 06:43:41,517] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=prepare_table, run_id=scheduled__2022-03-03T06:40:39.499385+00:00, run_start_date=2022-03-03 06:43:40.151898+00:00, run_end_date=2022-03-03 06:43:40.379540+00:00, run_duration=0.227642, state=success, executor_state=success, try_number=1, max_tries=0, job_id=15, pool=default_pool, queue=default, priority_weight=5, operator=PythonOperator
+[2022-03-03 06:43:50,758] {scheduler_job.py:1137} INFO - Resetting orphaned tasks for active dag runs
+[2022-03-03 06:44:12,791] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+[2022-03-03 06:44:12,795] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 127 open slots and 1 task instances ready to be queued
+[2022-03-03 06:44:12,795] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 1/16 running and queued tasks
+[2022-03-03 06:44:12,796] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+[2022-03-03 06:44:12,801] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='add_state', run_id='scheduled__2022-03-03T06:40:39.499385+00:00', try_number=1) to executor with priority 2 and queue default
+[2022-03-03 06:44:12,801] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'add_state', 'scheduled__2022-03-03T06:40:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:44:12,862] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.add_state run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:44:12,862] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sleep_30 run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:44:12,883] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=sleep_30, run_id=scheduled__2022-03-03T06:40:39.499385+00:00, run_start_date=2022-03-03 06:43:41.663842+00:00, run_end_date=2022-03-03 06:44:11.919986+00:00, run_duration=30.256144, state=success, executor_state=success, try_number=1, max_tries=0, job_id=17, pool=default_pool, queue=default, priority_weight=3, operator=BashOperator
+[2022-03-03 06:44:12,883] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.add_state scheduled__2022-03-03T06:40:39.499385+00:00 [queued]> to 0ff3ba1b-ce88-4d2f-b4cd-c04a6e267730
+[2022-03-03 06:44:14,077] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.add_state run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:44:14,091] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=add_state, run_id=scheduled__2022-03-03T06:40:39.499385+00:00, run_start_date=2022-03-03 06:44:13.019444+00:00, run_end_date=2022-03-03 06:44:13.234547+00:00, run_duration=0.215103, state=success, executor_state=success, try_number=1, max_tries=0, job_id=18, pool=default_pool, queue=default, priority_weight=2, operator=PostgresOperator
+[2022-03-03 06:44:42,308] {scheduler_job.py:300} INFO - 1 tasks up for execution:
+	<TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+[2022-03-03 06:44:42,310] {scheduler_job.py:329} INFO - Figuring out tasks to run in Pool(name=default_pool) with 128 open slots and 1 task instances ready to be queued
+[2022-03-03 06:44:42,311] {scheduler_job.py:357} INFO - DAG example_sql_sensor has 0/16 running and queued tasks
+[2022-03-03 06:44:42,311] {scheduler_job.py:433} INFO - Setting the following tasks to queued state:
+	<TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:40:39.499385+00:00 [scheduled]>
+[2022-03-03 06:44:42,313] {scheduler_job.py:473} INFO - Sending TaskInstanceKey(dag_id='example_sql_sensor', task_id='drop_table_last', run_id='scheduled__2022-03-03T06:40:39.499385+00:00', try_number=1) to executor with priority 1 and queue default
+[2022-03-03 06:44:42,314] {base_executor.py:82} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'example_sql_sensor', 'drop_table_last', 'scheduled__2022-03-03T06:40:39.499385+00:00', '--local', '--subdir', 'DAGS_FOLDER/example_sql_sensor.py']
+[2022-03-03 06:44:42,369] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.drop_table_last run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status queued for try_number 1
+[2022-03-03 06:44:42,369] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.sql_sensor run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:44:42,380] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=sql_sensor, run_id=scheduled__2022-03-03T06:40:39.499385+00:00, run_start_date=2022-03-03 06:43:41.631511+00:00, run_end_date=2022-03-03 06:44:42.049934+00:00, run_duration=60.418423, state=success, executor_state=success, try_number=1, max_tries=0, job_id=16, pool=default_pool, queue=default, priority_weight=2, operator=SqlSensor
+[2022-03-03 06:44:42,381] {scheduler_job.py:561} INFO - Setting external_id for <TaskInstance: example_sql_sensor.drop_table_last scheduled__2022-03-03T06:40:39.499385+00:00 [queued]> to 7cb8ed8f-2db8-496d-8c5b-df5621b2ce28
+[2022-03-03 06:44:43,537] {dagrun.py:545} INFO - Marking run <DagRun example_sql_sensor @ 2022-03-03 06:40:39.499385+00:00: scheduled__2022-03-03T06:40:39.499385+00:00, externally triggered: False> successful
+[2022-03-03 06:44:43,537] {dagrun.py:590} INFO - DagRun Finished: dag_id=example_sql_sensor, execution_date=2022-03-03 06:40:39.499385+00:00, run_id=scheduled__2022-03-03T06:40:39.499385+00:00, run_start_date=2022-03-03 06:43:39.875754+00:00, run_end_date=2022-03-03 06:44:43.537466+00:00, run_duration=63.661712, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2022-03-03 06:40:39.499385+00:00, data_interval_end=2022-03-03 06:43:39.499385+00:00, dag_hash=18529d920fc376b1ffe8730f0709f65d
+[2022-03-03 06:44:43,539] {dag.py:2937} INFO - Setting next_dagrun for example_sql_sensor to 2022-03-03T06:43:39.499385+00:00
+[2022-03-03 06:44:43,572] {scheduler_job.py:527} INFO - Executor reports execution of example_sql_sensor.drop_table_last run_id=scheduled__2022-03-03T06:40:39.499385+00:00 exited with status success for try_number 1
+[2022-03-03 06:44:43,579] {scheduler_job.py:570} INFO - TaskInstance Finished: dag_id=example_sql_sensor, task_id=drop_table_last, run_id=scheduled__2022-03-03T06:40:39.499385+00:00, run_start_date=2022-03-03 06:44:42.525228+00:00, run_end_date=2022-03-03 06:44:42.727165+00:00, run_duration=0.201937, state=success, executor_state=success, try_number=1, max_tries=0, job_id=19, pool=default_pool, queue=default, priority_weight=1, operator=PostgresOperator
+[2022-03-03 06:45:47,483] {scheduler_job.py:173} INFO - Exiting gracefully upon receiving signal 15
+[2022-03-03 06:45:48,491] {process_utils.py:120} INFO - Sending Signals.SIGTERM to group 46. PIDs of all processes in the group: [46]
+[2022-03-03 06:45:48,492] {process_utils.py:75} INFO - Sending the signal Signals.SIGTERM to group 46
+[2022-03-03 06:45:49,976] {process_utils.py:70} INFO - Process psutil.Process(pid=46, status='terminated', exitcode=0, started='06:33:49') (46) terminated with exit code 0
+[2022-03-03 06:45:49,978] {process_utils.py:120} INFO - Sending Signals.SIGTERM to group 46. PIDs of all processes in the group: []
+[2022-03-03 06:45:49,978] {process_utils.py:75} INFO - Sending the signal Signals.SIGTERM to group 46
+[2022-03-03 06:45:49,978] {process_utils.py:89} INFO - Sending the signal Signals.SIGTERM to process 46 as process group is missing.
+[2022-03-03 06:45:49,978] {scheduler_job.py:678} INFO - Exited execute loop
