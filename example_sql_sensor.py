@@ -46,6 +46,7 @@ with DAG(
     dag_id="example_sql_sensor",
     start_date=datetime(1970, 1, 1),
     schedule_interval=timedelta(seconds=181),
+    max_active_runs=1,
     catchup=False,
 ) as dag:
 

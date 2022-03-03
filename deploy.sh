@@ -13,14 +13,30 @@ set -euo pipefail
 kubectl create namespace tmp
 
 # deploy airflow
-helm repo add apache-airflow https://airflow.apache.org
+helm repo add astronomer-airflow https://helm.astronomer.io
 helm repo update
-cat <<- 'EOF' | helm install airflow --namespace tmp apache-airflow/airflow -f -
-defaultAirflowRepository: localhost:5000/stuckscheduled
-defaultAirflowTag: latest
-env:
-  - name: AIRFLOW__SCHEDULER__SCHEDULER_HEARTBEAT_SEC
-    value: '2'
+cat <<- 'EOF' | helm install airflow --namespace tmp astronomer-airflow/airflow -f -
+airflow:
+  airflowHome: /usr/local/airflow
+  executor: CeleryExecutor
+  defaultAirflowRepository: localhost:5000/stuckscheduled
+  defaultAirflowTag: latest
+  gid: 50000
+  images:
+    airflow:
+      pullPolicy: Always
+      repository: localhost:5000/stuckscheduled
+    flower:
+      pullPolicy: Always
+    pod_template:
+      pullPolicy: Always
+  env:
+    - name: AIRFLOW__SCHEDULER__SCHEDULER_HEARTBEAT_SEC
+      value: '2'
+  logs:
+    persistence:
+      enabled: true
+      size: 2Gi
 EOF
 
 # deploy postgres
@@ -44,7 +60,7 @@ kubectl -n tmp exec svc/airflow-webserver bash -- \
 kubectl -n tmp exec svc/airflow-webserver bash -- airflow dags unpause example_sql_sensor
 
 # unpause a dag which will create background noise
-kubectl -n tmp exec svc/airflow-webserver bash -- airflow dags unpause thirty_three_sleep_grains
+kubectl -n tmp exec svc/airflow-webserver bash -- airflow dags unpause sixteen_sleep_grains
 
 # forward the webserver port so that the caller can poke around
 kubectl port-forward svc/airflow-webserver 8080:8080 --namespace tmp &

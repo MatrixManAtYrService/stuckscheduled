@@ -1,6 +1,5 @@
 from copy import deepcopy
 from dataclasses import dataclass
-from dataclasses_json import dataclass_json
 from datetime import datetime, timedelta
 from multiprocessing import Pool, cpu_count
 from random import randint, seed
@@ -22,7 +21,6 @@ zzz = "sleep"
 kpo_zzz = "kubernetes_pod_operator_sleep"
 
 
-@dataclass_json
 @dataclass
 class Shape:
     length_sec: int
@@ -66,7 +64,6 @@ def make_lanes(upstream: TaskMixin, shape: Shape):
 
     lanes = []
     for lane_num in range(1, shape.width_tasks + 1):
-        print(lane_num, end=":")
         worker_ct = randint(shape.min_pieces, shape.max_pieces)
 
         chunks = [randint(1, 10) for _ in range(worker_ct)]
@@ -104,17 +101,18 @@ def make_lanes(upstream: TaskMixin, shape: Shape):
                 raise NotImplemented("kpo coming soon")
             else:
                 raise Exception(f"what's a {shape.worktype}?")
-
-            print("[", shape.worktype, worklen, "]", end=",")
-        print()
         chain(*lane)
         upstream >> lane[0]
 
 
 def make_stressball(name: str, shape: Union[Shape, List[Shape]]):
-    print("\n" + name)
-
-    @dag(dag_id=name, start_date=datetime(1970, 1, 1), schedule_interval=timedelta(seconds=307)
+    @dag(
+        dag_id=name,
+        start_date=datetime(1970, 1, 1),
+        schedule_interval=timedelta(seconds=307),
+        max_active_runs=1,
+        catchup=False,
+    )
     def stressball():
 
         # initalize rng
